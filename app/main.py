@@ -36,7 +36,10 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 async def startup_event():
     """Executa ao iniciar a aplicação"""
     logger.info("Iniciando aplicação Email Automation Web...")
-    iniciar_scheduler_thread()
+    try:
+        iniciar_scheduler_thread()
+    except Exception as e:
+        logger.warning(f"Scheduler não iniciou: {e}")
     logger.info("Aplicação iniciada com sucesso!")
     logger.info("=" * 60)
     logger.info("[OK] Servidor pronto! Acesse em:")
