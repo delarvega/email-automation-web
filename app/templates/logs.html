@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Logs</title>
+</head>
+<body>
+  <h2>Emails enviados</h2>
+  <ul>
+    {% for log in logs %}
+      <li>{{ log.email }} - {{ log.assunto }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
