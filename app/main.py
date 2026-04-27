@@ -10,6 +10,7 @@ from .models import EmailTask
 from .scheduler import iniciar_scheduler_thread
 
 # Configuração de Logging - Simplificada
+os.makedirs("data", exist_ok=True)
 os.makedirs("data/logs", exist_ok=True)
 
 logging.basicConfig(
